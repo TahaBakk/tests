@@ -1,12 +1,8 @@
 import java.util.*;
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
 
 public class ProblemaMochila {
 
-    class Elemento {
+    static class Elemento {
         String nombre;
         double valor;
         double peso;
@@ -45,10 +41,7 @@ public class ProblemaMochila {
         almacen.add(new Elemento("PC",        100,  5));
         almacen.add(new Elemento("BlackBerry",150,  0.5));
     }
-    @Test
-    public void cargarDatosTest(){
-        assertEquals("Error en el tamaño del almacen!", 13, almacen.size(), 0);
-    }
+
 
     public void mostrarMochila() {
         double pesoMochila=0;
@@ -71,8 +64,8 @@ public class ProblemaMochila {
                 return (int) (x.valor - y.valor);
             }
         };
-        Collections.sort(almacen,cmp);  // ordena usando el comparador anterior
-        Collections.reverse(almacen);   // reversa el orden de los elementos
+        Collections.sort(almacen,cmp);// ordena usando el comparador anterior
+        Collections.reverse(almacen);// reversa el orden de los elementos
 
         double pesoMochila=0;
         int    posicion=0;

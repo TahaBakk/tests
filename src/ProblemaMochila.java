@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class ProblemaMochila {
+    public static double pesoMochila = 0;
 
     static class Elemento {
         String nombre;
@@ -67,7 +68,7 @@ public class ProblemaMochila {
         Collections.sort(almacen,cmp);// ordena usando el comparador anterior
         Collections.reverse(almacen);// reversa el orden de los elementos
 
-        double pesoMochila=0;
+        pesoMochila=0;
         int    posicion=0;
         while(pesoMochila<pesoMaximo && posicion < almacen.size()) {
             Elemento tmp = almacen.get(posicion);

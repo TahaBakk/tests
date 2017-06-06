@@ -10,6 +10,17 @@ import static org.junit.Assert.*;
  * Created by x3727349s on 24/04/17.
  */
 public class ProblemaMochilaTest {
+
+
+    @Test
+    @After
+    public void resolverProblema() throws Exception {
+        ProblemaMochila pm = new ProblemaMochila(20);
+        //el peso del contenido  tiene que ser menor al peso de la motchila
+        assertTrue ("El peso de la mochila supera el peso maximo",pm.pesoMochila < pm.pesoMaximo );
+    }
+
+
     @Test
     public void cargarDatos() throws Exception {
 
@@ -31,27 +42,18 @@ public class ProblemaMochilaTest {
         almacen2.add(new ProblemaMochila.Elemento("PC",        100,  5));
         almacen2.add(new ProblemaMochila.Elemento("BlackBerry",150,  0.5));
 
-
         assertEquals("Error en el tamaño del almacen!", 13, pm.almacen.size(), 0);
-
-        assertNotEquals("No son iguales",almacen2, pm.almacen);
-
-
     }
 
     @Test
     public void mostrarMochila() throws Exception {
         ProblemaMochila pm = new ProblemaMochila(20);
-
-
-
-
-    }
-
-    @Test
-    public void resolverProblema() throws Exception {
-        ProblemaMochila pm = new ProblemaMochila(20);
+        double peso = 13;
+        assertTrue (pm.pesoMochila < peso );
 
     }
+
+
+
 
 }
